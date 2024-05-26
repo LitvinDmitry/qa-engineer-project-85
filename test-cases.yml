@@ -1,0 +1,1967 @@
+---
+- summary: |
+    Проверка работы кнопки "Sign up"
+  requirement: |
+    Пользователь может создать акаунт
+  prerequisites:
+    no data
+  test-data: |
+    no data
+  steps:
+    - Нажать "Sign up"
+  expected-result: |
+    Открылась страница регистрации
+
+- summary: |
+    Проверка регистрации
+  requirement: |
+    Пользователь может войти в свой акаунт
+  prerequisites:
+    Открыта страница регистрации
+  test-data: |
+    no data
+  steps:
+    - Заполнить поля валидными данными
+    - Нажать кнопку 'Submit'
+  expected-result: |
+    Открылась главная страница игры
+
+- summary: |
+    Проверка регистрации c незаполненными полями
+  requirement: |
+    Форма регистрации должна принимать данные только по заданным критериям
+  prerequisites:
+    no data
+  test-data: |
+    no data
+  steps:
+    - Нажать кнопку 'Sign up'
+    - Нажать кнопку 'Submit'
+  expected-result: |
+    Под всеми полями ввода появляются подсказки, что нужно ввести данные
+
+- summary: |
+    Проверка регистрации c невалидным по количеству символов Nickname
+  requirement: |
+    Форма регистрации должна принимать данные только по заданным критериям
+  prerequisites:
+    no data
+  test-data: |
+    Nickname = qa
+    Email = hexlethex@mail.ru
+    Password = litlitlit
+    Password Confirm = litlitlit
+  steps:
+    - Нажать кнопку 'Sign up'
+    - Заполнить поля данными
+    - Нажать кнопку 'Submit'
+  expected-result: |
+    Под полем Nickname появилось сообщение Should be from 3 to 16 characters
+
+- summary: |
+    Проверка регистрации c невалидными данными Nickname
+  requirement: |
+    Форма регистрации должна принимать данные только по заданным критериям
+  prerequisites:
+    no data
+  test-data: |
+    Nickname = 1Dmitry
+    Email = hexlethex@mail.ru
+    Password = litlitlit
+    Password Confirm = litlitlit
+  steps:
+    - Нажать кнопку 'Sign up'
+    - Заполнить поля данными
+    - Нажать кнопку 'Submit'
+  expected-result: |
+    Под полем Nickname появилось сообщение Should contain Latin letters, numbers and underscores. Only begin with latin letter
+  
+- summary: |
+    Проверка регистрации c невалидными данными Email
+  requirement: |
+    Форма регистрации должна принимать данные только по заданным критериям
+  prerequisites:
+    no data
+  test-data: |
+    Nickname = Dmitry
+    Email = 2
+    Password = litlitlit
+    Password Confirm = litlitlit
+  steps:
+    - Нажать кнопку 'Sign up'
+    - Заполнить поля данными
+    - Нажать кнопку 'Submit'
+  expected-result: |
+    Под полем Email появилось сообщение Invalid email
+
+- summary: |
+    Проверка регистрации cлишком малым количеством символов поля Password
+  requirement: |
+    Форма регистрации должна принимать данные только по заданным критериям
+  prerequisites:
+    no data
+  test-data: |
+    Nickname = Dmitry
+    Email = hexlethex@mail.ru
+    Password = 12345
+    Password Confirm = 12345
+  steps:
+    - Нажать кнопку 'Sign up'
+    - Заполнить поля данными
+    - Нажать кнопку 'Submit'
+  expected-result: |
+    Под полем Password появилось сообщение Should be from 6 to 16 characters
+
+- summary: |
+    Проверка регистрации cлишком большим количеством символов поля Password
+  requirement: |
+    Форма регистрации должна принимать данные только по заданным критериям
+  prerequisites:
+    no data
+  test-data: |
+    Nickname = Dmitry
+    Email = hexlethex@mail.ru
+    Password = 123o123o123o123o1
+    Password Confirm = 1123o123o123o123o1
+  steps:
+    - Нажать кнопку 'Sign up'
+    - Заполнить поля данными
+    - Нажать кнопку 'Submit'
+  expected-result: |
+    Под полем Password появилось сообщение Should be from 6 to 16 characters
+
+- summary: |
+    Проверка поля Password Confirmation при регистрации
+  requirement: |
+    Форма регистрации должна принимать данные только по заданным критериям
+  prerequisites:
+    no data
+  test-data: |
+    Nickname = Dmitry
+    Email = hexlethex@mail.ru
+    Password = 123456
+    Password Confirm = 111111
+  steps:
+    - Нажать кнопку 'Sign up'
+    - Заполнить поля данными
+    - Нажать кнопку 'Submit'
+  expected-result: |
+    Под полем Password Confirmation появилось сообщение Passwords must match
+
+- summary: |
+    Проверка кнопки входа с помощью github
+  requirement: |
+    Пользователь может зарегистрировать акаунт
+  prerequisites:
+    Открыта страница регистрации в режиме инкогнито
+  test-data: |
+    no data
+  steps:
+    - Нажать кнопку 'Sign in with Github'
+  expected-result: |
+    Открылась страница авторизации Github
+
+- summary: |
+    Проверка кнопки входа с помощью Discord
+  requirement: |
+    Пользователь может зарегистрировать акаунт
+  prerequisites:
+    Открыта страница регистрации в режиме инкогнито
+  test-data: |
+    no data
+  steps:
+    - Нажать кнопку 'Sign in with Discord'
+  expected-result: |
+    Открылась страница авторизации Discord
+
+- summary: |
+    Проверка работы кнопки "Sign in"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    no data
+  test-data: |
+    no data
+  steps:
+    - Нажать "Sign in"
+  expected-result: |
+    Открылась страница Авторизации
+
+- summary: |
+    Проверка авторизации
+  requirement: |
+    Пользователь может войти в свой акаунт
+  prerequisites:
+    Открыта страница авторизации
+  test-data: |
+    Email = codebattle689@mail.ru
+    Password = 689689689
+  steps:
+    - Открыть DevTools на вкладке Network
+    - Заполнить поля Email и Password данными
+    - Нажать кнопку  'Submit'
+  expected-result: |
+    Открылась главная страница игры, от сервера приходит статус 200 ОК
+
+- summary: |
+    Проверка входа пользователя с несуществующей почтой и паролем
+  requirement: |
+    При несуществующей почте и пароелм пользователь должен получить сообщение об ошибке
+  prerequisites:
+    Открыта страница авторизации
+  test-data: |
+    Email = hexlet@mail.ru Password = badpass
+  steps:
+    - Вводим Email
+    - Вводим Password
+    - Нажимаем кнопку «Submit»
+  expected-result: |
+    На экране появилось сообщение 'EMAIL_NOT_FOUND'
+
+- summary: |
+    Проверка входа пользователя с неверным паролем
+  requirement: |
+    При неправильном логине или пароле пользователь должен получить сообщение об ошибке
+  prerequisites:
+    Открыта страница авторизации
+  test-data: |
+    Email = codebattle689@mail.ru Password = badpass
+  steps:
+    - Вводим Email
+    - Вводим Password
+    - Нажимаем кнопку «Submit»
+  expected-result: |
+    На экране появилось сообщение 'INVALID_PASSWORD'
+
+- summary: |
+    Проверка работы кнопки "Create a game"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать "Create a game"
+  expected-result: |
+    Открылось окно настройки лобби
+
+- summary: |
+    Проверка выбора сложности заданий в окне создании игры
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать "Create a game"
+    - Открыть Dev tools
+    - Сменить сложность
+  expected-result: |
+    Ответ от сервера 200 ОК
+  
+- summary: |
+    Проверка выбора типа игры в окне создании игры
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать "Create a game"
+    - Открыть Dev tools
+    - Сменить тип игры
+  expected-result: |
+    Ответ от сервера 200 ОК
+
+- summary: |
+    Проверка выбора времени игры в окне создании игры
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать "Create a game"
+    - Открыть Dev tools
+    - Сменить время игры
+  expected-result: |
+    Ответ от сервера 200 ОК
+
+- summary: |
+    Проверка выбора задания в окне создании игры
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать "Create a game"
+    - Открыть Dev tools
+    - Сменить задание
+  expected-result: |
+    Ответ от сервера 200 ОК 
+
+- summary: |
+    Проверка выбора типа заданий в окне создании игры
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать "Create a game"
+    - Открыть Dev tools
+    - Выбрать тип заданий по тегу
+  expected-result: |
+    Ответ от сервера 200 ОК
+
+- summary: |
+    Проверка создания матча с ботом в окне Create a game
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать "Create a game"
+    - Выбрать With a bot
+    - Нажать Create battle
+  expected-result: |
+    Открылось игра с ботом соответствующая параметрам в окне Create a game
+
+- summary: |
+    Проверка создания матча с ботом на выбранное время, с выбранным заданием
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать "Create a game"
+    - Выбрать With a bot
+    - Выбрать любое время 
+    - Выбрать любое задание, кроме random task
+    - Нажать Create battle
+  expected-result: |
+    Открылось игра с ботом соответствующая выбранным параметрам 
+
+- summary: |
+    Проверка создания матча с другом в окне Create a game
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    Nickname = testhex
+    Password = testtest
+  steps:
+    - Открыть дополнительное окно браузера в режиме инкогнито
+    - Заполнить форму и авторизоваться
+    - Нажать "Create a game"
+    - Выбрать With a friend
+    - В появившемся поле Choose opponent ввести ник первого аккаунта
+    - Выбрать его в появившемся списке
+    - Нажать Create invite
+    - Перейти в окно первого браузера
+    - Нажать на иконку скрещенных мечей в шапке страницы
+  expected-result: |
+    Открылось уведомление с приглашением на матч от testhex
+
+- summary: |
+    Проверка перевода задания
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыто окно игры с ботом
+  test-data: |
+    no data
+  steps:
+    - Нажать EN
+    - Выбрать RU
+  expected-result: |
+    Задание перевелось на русский
+
+- summary: |
+    Проверка работы кнопки описания задания
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыто окно игры с ботом
+  test-data: |
+    no data
+  steps:
+    - Нажать на иконку квадрата с побелами в гранях
+  expected-result: |
+    Oткрылось окно Task Description
+
+- summary: |
+    Проверка работы кнопки крестик в правом верхнем углу окна Task Description
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыто окно игры с ботом
+  test-data: |
+    no data
+  steps:
+    - Нажать на иконку квадрата с пробелами в гранях
+    - Нажать на крестик в правом верхнем углу окна Task Description
+  expected-result: |
+    Окно закрылось
+
+- summary: |
+    Проверка работы кнопки Close в окне Task Description
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыто окно игры с ботом
+  test-data: |
+    no data
+  steps:
+    - Нажать на иконку квадрата с пробелами в гранях
+    - Нажать на Close в окне Task Description
+  expected-result: |
+    Окно закрылось
+
+- summary: |
+    Проверка работы перевода в окне Task Description
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыто окно игры с ботом
+  test-data: |
+    no data
+  steps:
+    - Нажать на иконку квадрата с пробелами в гранях
+    - Нажать на кнопку изменения языка
+    - Выбрать другой язык
+  expected-result: |
+    Язык сменился
+
+- summary: |
+    Проверка работы кнопки Show guide
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыто окно игры с ботом
+  test-data: |
+    no data
+  steps:
+    - Нажать на кнопку Show guide
+  expected-result: |
+    Появилось окно Game page
+
+- summary: |
+    Проверка работы Show guide
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыто окно игры с ботом
+  test-data: |
+    no data
+  steps:
+    - Нажать на кнопку Show guide
+    - нажать Next
+    - нажать Next
+    - нажать Next
+    - нажать Next
+    - нажать Next
+    - нажать Next
+    - нажать Next
+    - нажать Next
+  expected-result: |
+    Окно Show guide закрылось
+
+- summary: |
+    Проверка работы кнопки skip guide в окне Show guide
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыто окно игры с ботом
+  test-data: |
+    no data
+  steps:
+    - Нажать на кнопку Show guide
+    - Нажать skip guide
+  expected-result: |
+    Окно Show guide закрылось
+
+- summary: |
+    Проверка работы кнопки back в окне Show guide
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыто окно игры с ботом
+  test-data: |
+    no data
+  steps:
+    - Нажать на кнопку Show guide
+    - Нажать Next
+    - Нажать Back
+  expected-result: |
+    Открылось первоначальное окно Show guide
+
+- summary: |
+    Проверка работы кнопки крестика в окне Show guide
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыто окно игры с ботом
+  test-data: |
+    no data
+  steps:
+    - Нажать на кнопку Show guide
+    - Нажать крестик
+  expected-result: |
+    Окно Show guide закрылось
+
+- summary: |
+    Проверка изменения языка програмирования в окне игры
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыто окно игры с ботом
+  test-data: |
+    no data
+  steps:
+    - Нажать на выпадающий список с языками програмирования
+    - Выбрать любой язык,  например Ruby
+  expected-result: |
+    Макет решения изменился
+
+- summary: |
+    Проверка изменения цвета терминала в окне игры
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыто окно игры с ботом
+  test-data: |
+    no data
+  steps:
+    - Нажать на Light
+  expected-result: |
+    Цвет терминала сменился на светлый
+
+- summary: |
+    Негативная проверка Run при пустом терминале игры
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыто окно игры с ботом
+  test-data: |
+    no data
+  steps:
+    - Отчистить терминал
+    - Нажать Run
+  expected-result: |
+    Решение не засчитано
+
+- summary: |
+    Проверка кнопки output в окне игры
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыто окно игры с ботом
+  test-data: |
+    no data
+  steps:
+    - Отчистить терминал
+    - Нажать Run
+    - Нажать OUTPUT
+  expected-result: |
+    Открылся список результатов тестов
+
+- summary: |
+    Проверка кнопки Reset solution в окне игры
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыто окно игры с ботом
+  test-data: |
+    no data
+  steps:
+    - Отчистить терминал
+    - Reset solution
+  expected-result: |
+    Код в терминале вернулся в первоначальный вид
+
+- summary: |
+    Проверка кнопки Open history в окне игры с недостаточными правами
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыто окно игры с ботом
+    У авторизированного аккаунта нет премиум подписки
+  test-data: |
+    no data
+  steps:
+    - Нажать кнопку Open history
+  expected-result: |
+    Появилось окно Restricted Content
+
+- summary: |
+    Проверка кнопки Back to home на странице игры
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыто окно игры с ботом
+  test-data: |
+    no data
+  steps:
+    - Нажать кнопку Back to home
+  expected-result: |
+    Открылась главная страница приложения
+
+- summary: |
+    Проверка кнопки Give up на странице игры
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыто окно игры с ботом
+  test-data: |
+    no data
+  steps:
+    - Нажать кнопку Give up
+  expected-result: |
+    Открылось окно с подтверждением 
+
+- summary: |
+    Проверка кнопки Cancel в окне Give up на странице игры
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыто окно игры с ботом
+  test-data: |
+    no data
+  steps:
+    - Нажать кнопку Give up
+    - Нажать кнопку Cancel
+  expected-result: |
+    Окно закрылось игра продолжилась
+
+- summary: |
+    Проверка кнопки Give up в окне Give up на странице игры
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыто окно игры с ботом
+  test-data: |
+    no data
+  steps:
+    - Нажать кнопку Give up
+    - Нажать кнопку Give up
+  expected-result: |
+    Появилось окно If you read this you've lost the game 
+
+- summary: |
+    Проверка кнопки il be back в окне If you read this you've lost the game 
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыто окно игры с ботом
+  test-data: |
+    no data
+  steps:
+    - Нажать кнопку Give up
+    - Нажать кнопку Give up
+    - Нажать кнопку il be back
+  expected-result: |
+    Окно закрылось мы оказались на странице игры с результатами
+
+- summary: |
+    Проверка кнопки крестик в окне If you read this you've lost the game 
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыто окно игры с ботом
+  test-data: |
+    no data
+  steps:
+    - Нажать кнопку Give up
+    - Нажать кнопку Give up
+    - Нажать кнопку il be back
+  expected-result: |
+    Окно закрылось мы оказались на странице игры с результатами
+
+- summary: |
+    Проверка регистрации системой победы
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    Решение = 
+#from typing import List, Dict
+
+#def solution(first: int, second: int) -> bool:
+# res = first ** (1/2) == second ** (1/3)
+# return res;
+  steps:
+    - Нажать Create a game
+    - Выбрать уровень elementary
+    - Выбрать With a bot
+    - Выбрать задание squares_and_cubes
+    - Нажать Create battle
+    - Выбрать Python
+    - Поменять данные в терминале на данные из тест даты 
+    - Удалить все символы '#'
+    - Нажать Run
+  expected-result: |
+    Появилось окно ПОБЕДЫ
+
+- summary: |
+    Проверка переключения чата на режим уведомлений на странице игры
+  requirement: |
+    В игру можно играть с любым человеком, с ботом или другом
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыто окно игры с ботом
+  test-data: |
+    no data
+  steps:
+    - Нажать General
+    - Выбрать Notification
+  expected-result: |
+    В чате остались только уведомления
+
+
+
+- summary: |
+    Проверка создания матча с ботом на выбранное время, с выбранным заданием
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать "Create a game"
+    - Выбрать With a bot
+    - Выбрать любое время 
+    - Выбрать любое задание, кроме random task
+    - Нажать Create battle
+  expected-result: |
+    Открылось игра с ботом соответствующая выбранным параметрам 
+
+
+- summary: |
+    Проверка работы кнопки "Try simple battle"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    no data
+  test-data: |
+    no data
+  steps:
+    - Нажать "Try simple battle"
+  expected-result: |
+    Открылась игра
+
+- summary: |
+    Проверка работы кнопки "My profile"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'My profile'
+  expected-result: |
+    Открылся профиль пользователя
+
+- summary: |
+    Проверка работы кнопки 'Completed games' в профиле
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+    В профиле есть завершенные матчи
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'My profile'
+    - Нажать 'Completed games'
+  expected-result: |
+    Открылся список завершенных матчей
+
+- summary: |
+    Проверка работы кнопки 'Show' в профиле
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+    В профиле есть завершенные матчи
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на My profile
+    - Нажать Completed games
+    - Нажать Show
+  expected-result: |
+    Открылась страница записи завершенной игры
+
+- summary: |
+    Проверка работы кнопки "Settings"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Settings'
+  expected-result: |
+    Открылись настройки
+
+- summary: |
+    Смена никнейма в настройках профиля
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Settings'
+    - Внести изменения в поле Your name, Например изменить последнюю букву
+    - Нажать Save
+  expected-result: |
+    Появилось сообщение Your settings has been changed
+
+- summary: |
+    Смена никнейма на слишком длинный в настройках профиля
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    name = test6891123123123123
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Settings'
+    - Внести изменения в поле Your name
+  expected-result: |
+    Появилось сообщение Should be 16 character(s) or less, кнопка save не активна
+
+- summary: |
+    Смена никнейма на слишком короткий в настройках профиля
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    name = te
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Settings'
+    - Внести изменения в поле Your name
+  expected-result: |
+    Появилось сообщение Should be at least 3 characters, кнопка save не активна
+
+- summary: |
+    Смена никнейма на пустой в настройках профиля
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    name = te
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Settings'
+    - Внести изменения в поле Your name
+  expected-result: |
+    Появилось сообщение Field can't be empty, кнопка save не активна
+
+
+- summary: |
+    Смена языка программировния в профиле
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Settings'
+    - Нажать на форму Your weapon
+    - В выпадающем списке выбрать другой язык
+    - Нажать Save
+  expected-result: |
+    Появилось сообщение Your settings has been changed
+
+- summary: |
+    Внесение изменений в поле Your clan в настройках профиля
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Settings'
+    - В форме Your clan ввести название клана, например = Moscow
+    - Нажать Save
+  expected-result: |
+    Появилось сообщение Your settings has been changed
+
+- summary: |
+    Выбор мелодии в настройках профиля
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Settings'
+    - В списке Select sound type выбрать любую мелодию
+    - Нажать Save
+  expected-result: |
+    Появилось сообщение Your settings has been changed
+
+- summary: |
+    Проверка звучания демо мелодии при выборе звуков в настройках профиля
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Settings'
+    - В списке Select sound type нажать на любую мелодию кроме Silent
+  expected-result: |
+    Проигралось демо выбранной мелодии
+
+- summary: |
+    Проверка изменения громкости звуков в настройках профиля
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Settings'
+    - В списке Select sound type нажать на любую мелодию кроме Silent
+    - Нажать в середину слайдера Select sound level
+    - После нажать в конец этого слайдера
+  expected-result: |
+    Во втором случае демо проигралось громче
+
+- summary: |
+    Проверка сохранения изменения громкости звуков в настройках профиля
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Settings'
+    - В списке Select sound type нажать на любую мелодию кроме Silent
+    - Изменить положение ползунка в слайдере Select sound level
+    - Нажать Save
+  expected-result: |
+    Появилась надпись Your settings has been changed
+
+- summary: |
+    Проверка работы кнопки "User rating"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'User rating'
+  expected-result: |
+    Открылся рейтинг пользователей
+
+- summary: |
+    Проверка работы кнопки Weekly в User rating
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'User rating'
+    - Нажать на Weekly
+  expected-result: |
+    Отобразился список пользователей с недельным рейтингом
+
+- summary: |
+    Проверка работы кнопки Monthly в User rating
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'User rating'
+    - Нажать на Monthly
+  expected-result: |
+    Отобразился список пользователей с месячным рейтингом
+
+- summary: |
+    Проверка работы кнопки Total в User rating
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'User rating'
+    - Нажать на Total
+  expected-result: |
+    Отобразился список пользователей с рейтингом за все время
+
+- summary: |
+    Поиск статистики пользователя по никнейму в User rating
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'User rating'
+    - В поле Username ввести любой никнейм, например свой
+  expected-result: |
+    В списке остался только пользователь с введенным никнеймом
+
+- summary: |
+    Проверка сортировки по рейтингу в списке User rating за все время
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыта страница User rating
+    Кнопка total активна
+  test-data: |
+    no data
+  steps:
+    - Дважды нажимаем на Rating
+  expected-result: |
+    Значения столбца Rating расположены сверху вниз по возрастанию 
+  
+- summary: |
+    Проверка сортировки по рейтингу в списке User rating за месяц
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыта страница User rating
+    Кнопка monthly активна
+  test-data: |
+    no data
+  steps:
+    - Дважды нажимаем на Rating
+  expected-result: |
+    Значения столбца Rating расположены сверху вниз по возрастанию 
+
+- summary: |
+    Проверка сортировки по рейтингу в списке User rating за неделю
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыта страница User rating
+    Кнопка weekly активна
+  test-data: |
+    no data
+  steps:
+    - Дважды нажимаем на Rating
+  expected-result: |
+    Значения столбца Rating расположены сверху вниз по возрастанию
+
+- summary: |
+    Проверка сортировки по рангу в списке User rating за все время
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыта страница User rating
+    Кнопка total активна
+  test-data: |
+    no data
+  steps:
+    - Дважды нажимаем на Rank
+  expected-result: |
+    Значения столбца Rank расположены сверху вниз по возрастанию 
+  
+- summary: |
+    Проверка сортировки по рангу в списке User rating за месяц
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыта страница User rating
+    Кнопка monthly активна
+  test-data: |
+    no data
+  steps:
+    - Дважды нажимаем на Rank
+  expected-result: |
+    Значения столбца Rank расположены сверху вниз по возрастанию 
+
+- summary: |
+    Проверка сортировки по рангу в списке User rating за неделю
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыта страница User rating
+    Кнопка weekly активна
+  test-data: |
+    no data
+  steps:
+    - Дважды нажимаем на Rank
+  expected-result: |
+    Значения столбца Rank расположены сверху вниз по возрастанию
+
+- summary: |
+    Проверка сортировки по Games played в списке User rating за все время
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыта страница User rating
+    Кнопка total активна
+  test-data: |
+    no data
+  steps:
+    - Дважды нажимаем на Games played
+  expected-result: |
+    Значения столбца Games played расположены сверху вниз по возрастанию 
+  
+- summary: |
+    Проверка сортировки по Games played в списке User rating за месяц
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыта страница User rating
+    Кнопка monthly активна
+  test-data: |
+    no data
+  steps:
+    - Дважды нажимаем на Games played
+  expected-result: |
+    Значения столбца Games played расположены сверху вниз по возрастанию 
+
+- summary: |
+    Проверка сортировки по Games played в списке User rating за неделю
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыта страница User rating
+    Кнопка weekly активна
+  test-data: |
+    no data
+  steps:
+    - Дважды нажимаем на Games played
+  expected-result: |
+    Значения столбца Games played расположены сверху вниз по возрастанию
+
+- summary: |
+    Проверка сортировки по Joined в списке User rating за все время
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыта страница User rating
+    Кнопка total активна
+  test-data: |
+    no data
+  steps:
+    - Дважды нажимаем на Joined
+  expected-result: |
+    Значения столбца Joined расположены сверху вниз от раннего к позднему 
+  
+- summary: |
+    Проверка сортировки по Joined в списке User rating за месяц
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыта страница User rating
+    Кнопка monthly активна
+  test-data: |
+    no data
+  steps:
+    - Дважды нажимаем на Joined
+  expected-result: |
+    Значения столбца Joined расположены сверху вниз от раннего к позднему 
+
+- summary: |
+    Проверка сортировки по Joined в списке User rating за неделю
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыта страница User rating
+    Кнопка weekly активна
+  test-data: |
+    no data
+  steps:
+    - Дважды нажимаем на Joined
+  expected-result: |
+    Значения столбца Joined расположены сверху вниз от раннего к позднему
+
+- summary: |
+    Проверка изменения вывода количества пользователей в списке User rating
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'User rating'
+    - В списке Users per page выбираем любое значение, например 30
+    - Прокручиваем список в конец
+  expected-result: |
+    Номер последнего пользователя в списке равен выбранному значению
+
+- summary: |
+    Проверка переключения страниц списка User rating
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'User rating'
+    - В списке Users per page выбираем 20 
+    - Прокручиваем список в конец
+    - Выбираем любую страницу (например 3)
+  expected-result: |
+    Номер последнего пользователя в списке равен 20 умножить на номер страницы (например 60)
+
+- summary: |
+    Проверка перехода в профиль пользователя из списка User rating
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'User rating'
+    - В списке нажимаем на никнейм любого пользователя
+  expected-result: |
+    Открылась страница профиля этого пользователя
+
+- summary: |
+    Проверка перехода в профиль пользователя на Github из списка User rating
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'User rating'
+    - В списке нажимаем на логотип Github любого пользователя 
+  expected-result: |
+    Открылась страница профиля Github этого пользователя
+
+- summary: |
+    Проверка работы чекбокса With bots
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'User rating'
+    - Активировать чекбокс With bots
+  expected-result: |
+    Число Total entries увеличелось
+
+- summary: |
+    Проверка работы кнопки "Tasks"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Tasks'
+  expected-result: |
+    Открылся список заданий
+
+- summary: |
+    Проверка работы кнопки 'Create new task' в разделе "Tasks"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Tasks'
+    - Нажать 'Create new task'
+  expected-result: |
+    Открылся редактор заданий
+
+- summary: |
+    Проверка работы кнопки 'Task packs' в разделе "Tasks"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Tasks'
+    - Нажать 'Task packs'
+  expected-result: |
+    Открылся список 'Task packs'
+
+- summary: |
+    Проверка работы кнопки 'Show' в разделе "Tasks"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Tasks'
+    - Нажать 'Show' в любой задаче
+  expected-result: |
+    Открылся просмотр условий этой задачи
+
+- summary: |
+    Проверка работы кнопки 'Show' в разделе "Tasks"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Tasks'
+    - Нажать 'Show' в любой задаче
+    - Нажать 'STATUS' 
+  expected-result: |
+    Открылся просмотр статуса этой задачи
+
+- summary: |
+    Проверка работы кнопки "Tournamentss"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Tournamentss'
+  expected-result: |
+    Открылся список состязаний
+
+- summary: |
+    Проверка работы кнопки 'Show' в разделе "Tournamentss"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Tournamentss'
+    - Нажать 'show' на любом турнире из списка
+  expected-result: |
+    Открылась страница выбранного турнира
+
+- summary: |
+    Проверка работы кнопки 'Show' в разделе "Tournamentss"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Tournamentss'
+    - Нажать 'show' на любом турнире из списка
+    - Нажать 'Back to tournaments'
+  expected-result: |
+    Открылся список турниров
+
+- summary: |
+    Создание турнира
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Tournamentss'
+    - Заполнить форму валидными данными
+    - Нажать Create 
+  expected-result: |
+    Открылся список турниров
+
+- summary: |
+    Проверка работы кнопки "SourceCode"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'SourceCode'
+  expected-result: |
+    Открылся сайт Github с исходным кодом
+
+- summary: |
+    Проверка работы кнопки "Hexlet"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Hexlet'
+  expected-result: |
+    Открылся сайт Hexlet
+
+- summary: |
+    Проверка работы кнопки "Join Discord"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Join Discord'
+  expected-result: |
+    Открылся сайт Discord
+
+- summary: |
+    Проверка работы кнопки "Tg#codebattle"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Tg#codebattle'
+  expected-result: |
+    Произошло перенаправление на сайт Telegram
+
+- summary: |
+    Проверка работы кнопки "Sign out"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Sign out'
+  expected-result: |
+    Открылась главная страница, на месте никнейма появились кнопки Sign in и Sign up
+
+- summary: |
+    Проверка работы кнопки "Sign out"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на свой никнейм
+    - В появившемся меню нажать на 'Sign out'
+  expected-result: |
+    Открылась главная страница, на месте никнейма появились кнопки Sign in и Sign up
+
+- summary: |
+    Проверка работы кнопки "History"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать History
+  expected-result: |
+    Отобразился список последних игр
+
+- summary: |
+    Просмотр оконченной игры
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать History
+    - Нажать Show
+  expected-result: |
+    Открылась оконченая игры с её результами
+
+- summary: |
+    Проверка работы кнопки "Tournaments"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать Tournaments
+  expected-result: |
+    Отобразился список турниров
+
+- summary: |
+    Наблюдение за турниром
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать кнопку Tournaments
+    - Нажать Show
+  expected-result: |
+    Открылся турнир
+
+- summary: |
+    Проверка кнопки Tournaments Info
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать кнопку Tournaments
+    - Нажать Tournaments Info
+  expected-result: |
+    Открылся список турниров
+
+- summary: |
+    Проверка работы кнопки "Lobby"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыта главная страница 
+    Кнопка History активна
+  test-data: |
+    no data
+  steps:
+    - Нажать Lobby
+  expected-result: |
+    Отобразился список лобби
+
+- summary: |
+    Проверка работы кнопки "Lobby"
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+    Открыта главная страница 
+    Кнопка History активна
+  test-data: |
+    no data
+  steps:
+    - Нажать Lobby
+  expected-result: |
+    Отобразился список лобби
+
+- summary: |
+    Просмотр профиля пользователя в списке лобби
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - В списке лобби нажать на любой никнейм пользователя
+  expected-result: |
+    Открылся профиль пользователя
+
+- summary: |
+    Проверка присоединиться к уже созданному другим пользователем лобби
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - В списке лобби нажать на кнопку Fight
+  expected-result: |
+    Открылась страница игры. Игра запустилась
+
+- summary: |
+    Наблюдение за игрой созданной другим пользователем
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - В списке лобби нажать на кнопку Show
+  expected-result: |
+    Открылась страница игры. Игра запустилась
+
+- summary: |
+    Проверка отправки сообщений в глобальный чат
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Ввести любое сообщение в чат
+    - Нажать Send
+  expected-result: |
+    В чате отобразилось отправленное сообщение с авторизованного аккаунта
+  
+- summary: |
+    Проверка отправки личных сообщений другому пользователю
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - Нажать на ник любого пользователя в окне чата
+    - Нажать на Direct message
+  expected-result: |
+    В чате отобразилось 'You join private channel with <Ник аккаунта которому вы пишите>. You can send personal message'
+
+- summary: |
+    Проверка получения личных сообщений другим пользователем
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    Nickname = testhex
+    Password = testtest
+  steps:
+    - Открыть дополнительное окно браузера в режиме инкогнито
+    - Заполнить форму и авторизоваться
+    - Нажать на иконку письма в окне чата
+    - В списке нажать на никнейм аккаунта открытого в первом окне браузера
+    - Написать в чате любое сообщение 
+    - Отправить
+    - Перейти в окно первого браузера
+  expected-result: |
+    В чате отобразилось отправленное сообщение от testhex с пометкой [private]
+
+- summary: |
+    Проверка отправки приглашения в матч другому пользователю
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    Nickname = testhex
+    Password = testtest
+  steps:
+    - Открыть дополнительное окно браузера в режиме инкогнито
+    - Заполнить форму и авторизоваться
+    - Нажать на иконку скрещенных мечей в окне чата
+    - В списке нажать на никнейм аккаунта открытого в первом окне браузера
+    - В открывшемся окне 'Create a game' нажать Create invite
+    - Перейти в окно первого браузера
+    - Нажать на иконку скрещенных мечей в шапке страницы
+  expected-result: |
+    Открылось уведомление с приглашением на матч, от testhex
+
+- summary: |
+    Проверка отмены приглашения в матч другого пользователя
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    Nickname = testhex
+    Password = testtest
+  steps:
+    - Открыть дополнительное окно браузера в режиме инкогнито
+    - Заполнить форму и авторизоваться
+    - Нажать на иконку скрещенных мечей в окне чата
+    - В списке нажать на никнейм аккаунта открытого в первом окне браузера
+    - В открывшемся окне 'Create a game' нажать Create invite
+    - Нажать на иконку скрещенных мечей в шапке страницы
+    - Нажать Cancel
+  expected-result: |
+    В чате появилось сообщение You cancel battle invite [Opponent <Ник первого аккаунта>]
+
+
+- summary: |
+    Проверка отказа от приглашения в матч другим пользователем
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    Nickname = testhex
+    Password = testtest
+  steps:
+    - Открыть дополнительное окно браузера в режиме инкогнито
+    - Заполнить форму и авторизоваться
+    - Нажать на иконку скрещенных мечей в окне чата
+    - В списке нажать на никнейм аккаунта открытого в первом окне браузера
+    - В открывшемся окне 'Create a game' нажать Create invite
+    - Перейти в окно первого браузера
+    - Нажать на иконку скрещенных мечей в шапке страницы
+    - Нажать Decline
+  expected-result: |
+    Открылось уведомление с приглашением на матч, от testhex
+
+- summary: |
+    Проверка оповещения об отказе от приглашения в матч другим пользователем
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    Nickname = testhex
+    Password = testtest
+  steps:
+    - Открыть дополнительное окно браузера в режиме инкогнито
+    - Заполнить форму и авторизоваться
+    - Нажать на иконку скрещенных мечей в окне чата
+    - В списке нажать на никнейм аккаунта открытого в первом окне браузера
+    - В открывшемся окне 'Create a game' нажать Create invite
+    - Перейти в окно первого браузера
+    - Нажать на иконку скрещенных мечей в шапке страницы
+    - Нажать Decline
+    - Перейти во второе окно браузера (аккаунт testhex)
+  expected-result: |
+    В чате появилось сообщение 'Invite has been canceled (Opponent <ник первого аккаунта>)
+
+- summary: |
+    Проверка создания матча с другим пользователем
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    Nickname = testhex
+    Password = testtest
+  steps:
+    - Открыть дополнительное окно браузера в режиме инкогнито
+    - Заполнить форму и авторизоваться
+    - Нажать на иконку скрещенных мечей в окне чата
+    - В списке нажать на никнейм аккаунта открытого в первом окне браузера
+    - В открывшемся окне 'Create a game' выбрать время матча 3 минуты
+    - Выбрать тэг collections 
+    - Нажать Create invite
+    - Перейти в окно первого браузера
+    - Нажать на иконку скрещенных мечей в шапке страницы
+    - Нажать Accept
+    - Перейти во второе окно браузера (аккаунт testhex)
+  expected-result: |
+    Начался матч с первым аккаунтом, с настройками соответствующими указанным в окне 'Create a game' параметрам
+
+- summary: |
+    Проверка кнопки Send in invite 
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - В списке чата нажать на любой никнейм
+    - Нажать 'Send in invite'
+  expected-result: |
+    Открылось окно 'Create a game'
+
+- summary: |
+    Проверка кнопки Info 
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - В списке чата нажать на любой никнейм
+    - Нажать 'Info'
+  expected-result: |
+    Открылось страница профиля выбранного пользователя
+
+- summary: |
+    Проверка кнопки Copy Name 
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - В списке чата нажать на любой никнейм
+    - Нажать 'Copy Name'
+    - Вставить из буфера обмена в поле чата
+  expected-result: |
+    В поле чата вставился ник выбранного пользователя
+
+- summary: |
+    Проверка кнопки Month в окне Leaderboard 
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - В окне Leaderboard нажать Month
+  expected-result: |
+    Отобразился список пользователей отсартированный по рейтингу за месяц
+
+- summary: |
+    Проверка кнопки All в окне Leaderboard 
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - В окне Leaderboard нажать All
+  expected-result: |
+    Отобразился список пользователей отсартированный по рейтингу за все время
+
+- summary: |
+    Проверка кнопки Week в окне Leaderboard 
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+    В окне Leaderboard активна кнопка Month
+  test-data: |
+    no data
+  steps:
+    - В окне Leaderboard нажать Week
+  expected-result: |
+    Отобразился список пользователей отсартированный по рейтингу за неделю
+
+- summary: |
+    Проверка кнопки Top list в окне Leaderboard 
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - В окне Leaderboard нажать Top list
+  expected-result: |
+    Открылся Users rating со списком пользователей
+
+- summary: |
+    Открытие профиля пользователя из списка окна Leaderboard
+  requirement: |
+    Сайт должен быть разработан с учетом удобства использования
+  prerequisites:
+    Авторизация на сайте пройдена
+  test-data: |
+    no data
+  steps:
+    - В окне Leaderboard нажать на никнейм любого пользователя
+  expected-result: |
+    Открылся профиль выбранного пользователя
+
+
+
+
+

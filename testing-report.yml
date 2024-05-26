@@ -509,3 +509,5 @@
 
 - summary: |
     Открытие профиля пользователя из списка окна Leaderboard
+  status: pass
+  

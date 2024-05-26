@@ -1,0 +1,511 @@
+---
+- summary: |
+    Проверка работы кнопки "Sign up"
+  status: pass
+
+- summary: |
+    Проверка регистрации
+  status: pass
+
+- summary: |
+    Проверка регистрации c незаполненными полями
+  status: pass
+
+- summary: |
+    Проверка регистрации c невалидным по количеству символов Nickname
+  status: pass
+
+- summary: |
+    Проверка регистрации c невалидными данными Nickname
+  status: pass
+
+- summary: |
+    Проверка регистрации c невалидными данными Email
+  status: pass
+
+- summary: |
+    Проверка регистрации cлишком малым количеством символов поля Password
+  status: pass
+
+- summary: |
+    Проверка регистрации cлишком большим количеством символов поля Password
+  status: pass
+
+- summary: |
+    Проверка поля Password Confirmation при регистрации
+  status: pass
+
+- summary: |
+    Проверка кнопки входа с помощью github
+  status: pass
+
+- summary: |
+    Проверка кнопки входа с помощью Discord
+  status: pass
+
+- summary: |
+    Проверка работы кнопки "Sign in"
+  status: pass
+
+- summary: |
+    Проверка авторизации
+  status: pass
+
+- summary: |
+    Проверка входа пользователя с несуществующей почтой и паролем
+  status: pass
+
+- summary: |
+    Проверка входа пользователя с неверным паролем
+  status: pass
+
+- summary: |
+    Проверка работы кнопки "Create a game"
+  status: pass
+
+- summary: |
+    Проверка выбора сложности заданий в окне создании игры
+  status: pass
+
+- summary: |
+    Проверка выбора типа игры в окне создании игры
+  status: pass
+
+- summary: |
+    Проверка выбора времени игры в окне создании игры
+  status: pass
+
+- summary: |
+    Проверка выбора задания в окне создании игры
+  status: pass
+
+- summary: |
+    Проверка выбора типа заданий в окне создании игры
+  status: pass
+
+- summary: |
+    Проверка создания матча с ботом в окне Create a game
+  status: pass
+
+- summary: |
+    Проверка создания матча с ботом на выбранное время, с выбранным заданием
+  status: pass
+
+- summary: |
+    Проверка создания матча с другом в окне Create a game
+  status: pass
+
+- summary: |
+    Проверка перевода задания
+  status: pass
+
+- summary: |
+    Проверка работы кнопки описания задания
+  status: pass
+
+- summary: |
+    Проверка работы кнопки крестик в правом верхнем углу окна Task Description
+  status: pass
+
+- summary: |
+    Проверка работы кнопки Close в окне Task Description
+  status: pass
+
+- summary: |
+    Проверка работы перевода в окне Task Description
+  status: pass
+
+- summary: |
+    Проверка работы кнопки Show guide
+  status: pass
+
+- summary: |
+    Проверка работы Show guide
+  status: pass
+
+- summary: |
+    Проверка работы кнопки skip guide в окне Show guide
+  status: pass
+
+- summary: |
+    Проверка работы кнопки back в окне Show guide
+  status: pass
+
+- summary: |
+    Проверка работы кнопки крестика в окне Show guide
+  status: pass
+
+- summary: |
+    Проверка изменения языка програмирования в окне игры
+  status: pass
+
+- summary: |
+    Проверка изменения цвета терминала в окне игры
+  status: pass
+
+- summary: |
+    Негативная проверка Run при пустом терминале игры
+  status: pass
+
+- summary: |
+    Проверка кнопки output в окне игры
+  status: pass
+
+- summary: |
+    Проверка кнопки Reset solution в окне игры
+  status: pass
+
+- summary: |
+    Проверка кнопки Open history в окне игры с недостаточными правами
+  status: pass
+
+- summary: |
+    Проверка кнопки Back to home на странице игры
+  status: pass
+
+- summary: |
+    Проверка кнопки Give up на странице игры
+  status: pass
+
+- summary: |
+    Проверка кнопки Cancel в окне Give up на странице игры
+  status: pass
+
+- summary: |
+    Проверка кнопки Give up в окне Give up на странице игры
+  status: pass
+
+- summary: |
+    Проверка кнопки il be back в окне If you read this you've lost the game
+  status: pass
+
+- summary: |
+    Проверка кнопки крестик в окне If you read this you've lost the game
+  status: pass
+
+- summary: |
+    Проверка регистрации системой победы
+  status: pass
+
+- summary: |
+    Проверка переключения чата на режим уведомлений на странице игры
+  status: pass
+
+- summary: |
+    Проверка создания матча с ботом на выбранное время, с выбранным заданием
+  status: pass
+
+- summary: |
+    Проверка работы кнопки "Try simple battle"
+  status: pass
+
+- summary: |
+    Проверка работы кнопки "My profile"
+  status: pass
+
+- summary: |
+    Проверка работы кнопки 'Completed games' в профиле
+  status: pass
+
+- summary: |
+    Проверка работы кнопки 'Show' в профиле
+  status: pass
+
+- summary: |
+    Проверка работы кнопки "Settings"
+  status: pass
+
+- summary: |
+    Смена никнейма в настройках профиля
+  status: pass
+
+- summary: |
+    Смена никнейма на слишком длинный в настройках профиля
+  status: pass
+
+- summary: |
+    Смена никнейма на слишком короткий в настройках профиля
+  status: pass
+
+- summary: |
+    Смена никнейма на пустой в настройках профиля
+  status: pass
+
+- summary: |
+    Смена языка программировния в профиле
+  status: pass
+
+- summary: |
+    Внесение изменений в поле Your clan в настройках профиля
+  status: pass
+
+- summary: |
+    Выбор мелодии в настройках профиля
+  status: pass
+
+- summary: |
+    Проверка звучания демо мелодии при выборе звуков в настройках профиля
+  status: pass
+
+- summary: |
+    Проверка изменения громкости звуков в настройках профиля
+  status: pass
+
+- summary: |
+    Проверка сохранения изменения громкости звуков в настройках профиля
+  status: pass
+
+- summary: |
+    Проверка работы кнопки "User rating"
+  status: pass
+
+- summary: |
+    Проверка работы кнопки Weekly в User rating
+  status: pass
+
+- summary: |
+    Проверка работы кнопки Monthly в User rating
+  status: pass
+
+- summary: |
+    Проверка работы кнопки Total в User rating
+  status: pass
+
+- summary: |
+    Поиск статистики пользователя по никнейму в User rating
+  status: pass
+
+- summary: |
+    Проверка сортировки по рейтингу в списке User rating за все время
+  status: pass
+
+- summary: |
+    Проверка сортировки по рейтингу в списке User rating за месяц
+  status: fail
+
+- summary: |
+    Проверка сортировки всех пользователей, включая ботов, по дате (Joined) в списке User rating
+  status: fail
+
+- summary: |
+    Проверка сортировки по рейтингу в списке User rating за неделю
+  status: fail
+
+- summary: |
+    Проверка сортировки по рангу в списке User rating за все время
+  status: pass
+
+- summary: |
+    Проверка сортировки по рангу в списке User rating за месяц
+  status: pass
+
+- summary: |
+    Проверка сортировки по рангу в списке User rating за неделю
+  status: pass
+
+- summary: |
+    Проверка сортировки по Games played в списке User rating за все время
+  status: pass
+
+- summary: |
+    Проверка сортировки по Games played в списке User rating за месяц
+  status: pass
+
+- summary: |
+    Проверка сортировки по Games played в списке User rating за неделю
+  status: pass
+
+- summary: |
+    Проверка сортировки по Joined в списке User rating за все время
+  status: pass
+
+- summary: |
+    Проверка сортировки по Joined в списке User rating за месяц
+  status: pass
+
+- summary: |
+    Проверка сортировки по Joined в списке User rating за неделю
+  status: pass
+
+- summary: |
+    Проверка изменения вывода количества пользователей в списке User rating
+  status: pass
+
+- summary: |
+    Проверка переключения страниц списка User rating
+  status: pass
+
+- summary: |
+    Проверка перехода в профиль пользователя из списка User rating
+  status: pass
+
+- summary: |
+    Проверка перехода в профиль пользователя на Github из списка User rating
+  status: pass
+
+- summary: |
+    Проверка работы чекбокса With bots
+  status: pass
+
+- summary: |
+    Проверка работы кнопки "Tasks"
+  status: pass
+
+- summary: |
+    Проверка работы кнопки 'Create new task' в разделе "Tasks"
+  status: pass
+
+- summary: |
+    Проверка работы кнопки 'Task packs' в разделе "Tasks"
+  status: pass
+
+- summary: |
+    Проверка работы кнопки 'Show' в разделе "Tasks"
+  status: pass
+
+- summary: |
+    Проверка работы кнопки 'Show' в разделе "Tasks"
+  status: pass
+
+- summary: |
+    Проверка работы кнопки "Tournamentss"
+  status: pass
+
+- summary: |
+    Проверка работы кнопки 'Show' в разделе "Tournamentss"
+  status: pass
+
+- summary: |
+    Проверка работы кнопки 'Show' в разделе "Tournamentss"
+  status: pass
+
+- summary: |
+    Создание турнира
+  status: pass
+
+- summary: |
+    Проверка работы кнопки "SourceCode"
+  status: pass
+
+- summary: |
+    Проверка работы кнопки "Hexlet"
+  status: pass
+
+- summary: |
+    Проверка работы кнопки "Join Discord"
+  status: pass
+
+- summary: |
+    Проверка работы кнопки "Tg#codebattle"
+  status: pass
+
+- summary: |
+    Проверка работы кнопки "Sign out"
+  status: pass
+
+- summary: |
+    Проверка работы кнопки "Sign out"
+  status: pass
+
+- summary: |
+    Проверка работы кнопки "History"
+  status: pass
+
+- summary: |
+    Просмотр оконченной игры
+  status: pass
+
+- summary: |
+    Проверка работы кнопки "Tournaments"
+  status: pass
+
+- summary: |
+    Наблюдение за турниром
+  status: pass
+
+- summary: |
+    Проверка кнопки Tournaments Info
+  status: pass
+
+- summary: |
+    Проверка работы кнопки "Lobby"
+  status: pass
+
+- summary: |
+    Проверка работы кнопки "Lobby"
+  status: pass
+
+- summary: |
+    Просмотр профиля пользователя в списке лобби
+  status: pass
+
+- summary: |
+    Проверка присоединиться к уже созданному другим пользователем лобби
+  status: pass
+
+- summary: |
+    Наблюдение за игрой созданной другим пользователем
+  status: pass
+
+- summary: |
+    Проверка отправки сообщений в глобальный чат
+  status: pass
+
+- summary: |
+    Проверка отправки личных сообщений другому пользователю
+  status: pass
+
+- summary: |
+    Проверка получения личных сообщений другим пользователем
+  status: pass
+
+- summary: |
+    Проверка отправки приглашения в матч другому пользователю
+  status: pass
+
+- summary: |
+    Проверка отмены приглашения в матч другого пользователя
+  status: pass
+
+- summary: |
+    Проверка отказа от приглашения в матч другим пользователем
+  status: pass
+
+- summary: |
+    Проверка оповещения об отказе от приглашения в матч другим пользователем
+  status: pass
+
+- summary: |
+    Проверка создания матча с другим пользователем
+  status: pass
+
+- summary: |
+    Проверка кнопки Send in invite
+  status: pass
+
+- summary: |
+    Проверка кнопки Info
+  status: pass
+
+- summary: |
+    Проверка кнопки Copy Name
+  status: pass
+
+- summary: |
+    Проверка кнопки Month в окне Leaderboard
+  status: pass
+
+- summary: |
+    Проверка кнопки All в окне Leaderboard
+  status: pass
+
+- summary: |
+    Проверка кнопки Week в окне Leaderboard
+  status: pass
+
+- summary: |
+    Проверка кнопки Top list в окне Leaderboard
+  status: pass
+
+- summary: |
+    Открытие профиля пользователя из списка окна Leaderboard

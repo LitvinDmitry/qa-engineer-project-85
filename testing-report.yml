@@ -52,7 +52,7 @@
   status: pass
 
 - summary: |
-    Проверка входа пользователя с несуществующей почтой и паролем
+    Проверка авторизации незарегистрированного пользователя
   status: pass
 
 - summary: |
@@ -64,27 +64,7 @@
   status: pass
 
 - summary: |
-    Проверка выбора сложности заданий в окне создании игры
-  status: pass
-
-- summary: |
-    Проверка выбора типа игры в окне создании игры
-  status: pass
-
-- summary: |
-    Проверка выбора времени игры в окне создании игры
-  status: pass
-
-- summary: |
-    Проверка выбора задания в окне создании игры
-  status: pass
-
-- summary: |
-    Проверка выбора типа заданий в окне создании игры
-  status: pass
-
-- summary: |
-    Проверка создания матча с ботом в окне Create a game
+    Проверка создания игры с ботом
   status: pass
 
 - summary: |
@@ -117,10 +97,6 @@
 
 - summary: |
     Проверка работы кнопки Show guide
-  status: pass
-
-- summary: |
-    Проверка работы Show guide
   status: pass
 
 - summary: |
@@ -172,19 +148,11 @@
   status: pass
 
 - summary: |
-    Проверка кнопки Give up в окне Give up на странице игры
-  status: pass
-
-- summary: |
     Проверка кнопки il be back в окне If you read this you've lost the game
   status: pass
 
 - summary: |
-    Проверка кнопки крестик в окне If you read this you've lost the game
-  status: pass
-
-- summary: |
-    Проверка регистрации системой победы
+    Проверка победы в игре
   status: pass
 
 - summary: |
